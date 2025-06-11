@@ -139,10 +139,11 @@ export default function TaskRow({
                   {task.name}
                 </div>
                 
-                <div className="flex items-center space-x-0 sm:space-x-1 ml-1 flex-shrink-0">
+                <div className="flex items-center space-x-0 sm:space-x-1 ml-1 flex-shrink-0" style={{ paddingRight: isReadOnly ? '8px' : '0' }}>
                   <button 
                     onClick={() => setShowComments(!showComments)}
                     className={`${hasComments ? 'text-blue-500' : 'text-gray-400'} hover:text-blue-600 relative flex-shrink-0 ${isReadOnly ? 'ml-2' : ''}`}
+                    style={{ marginRight: isReadOnly ? '16px' : undefined }}
                   >
                     {hasComments && (
                       <span className="absolute -top-2 -left-3 bg-blue-500 text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
