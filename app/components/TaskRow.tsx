@@ -105,7 +105,7 @@ export default function TaskRow({
   return (
     <>
       <tr className="h-14" style={{height: '56px'}}>
-        <td className="border-2 border-gray-200 pl-1 pr-1 md:pl-6 md:pr-6 max-w-[150px] sm:max-w-none">
+        <td className={`border-2 border-gray-200 pl-1 pr-1 md:pl-6 ${isReadOnly ? 'md:pr-8' : 'md:pr-6'} max-w-[150px] sm:max-w-none`}>
           <div className="flex items-center h-full">
             {isEditingName ? (
               <input
@@ -125,7 +125,16 @@ export default function TaskRow({
                 <div 
                   className={`text-xs md:text-sm pl-1 md:pl-3 pr-0 md:pr-6 text-gray-900 font-medium truncate w-[80px] sm:w-auto ${isReadOnly && !isSharedView ? '' : 'cursor-pointer hover:text-blue-600'}`}
                   onClick={isReadOnly && !isSharedView ? undefined : () => setIsEditingName(true)}
-                  style={{ wordWrap: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+                  style={{ 
+                    wordWrap: 'break-word', 
+                    overflowWrap: 'break-word', 
+                    whiteSpace: 'normal', 
+                    display: '-webkit-box', 
+                    WebkitLineClamp: 2, 
+                    WebkitBoxOrient: 'vertical', 
+                    overflow: 'hidden',
+                    paddingRight: isReadOnly ? '12px' : undefined 
+                  }}
                 >
                   {task.name}
                 </div>
@@ -133,7 +142,7 @@ export default function TaskRow({
                 <div className="flex items-center space-x-0 sm:space-x-1 ml-1 flex-shrink-0">
                   <button 
                     onClick={() => setShowComments(!showComments)}
-                    className={`${hasComments ? 'text-blue-500' : 'text-gray-400'} hover:text-blue-600 relative flex-shrink-0`}
+                    className={`${hasComments ? 'text-blue-500' : 'text-gray-400'} hover:text-blue-600 relative flex-shrink-0 ${isReadOnly ? 'ml-2' : ''}`}
                   >
                     {hasComments && (
                       <span className="absolute -top-2 -left-3 bg-blue-500 text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
