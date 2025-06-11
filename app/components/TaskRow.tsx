@@ -105,7 +105,7 @@ export default function TaskRow({
   return (
     <>
       <tr className="h-14" style={{height: '56px'}}>
-        <td className="border-2 border-gray-200 pl-2 pr-2 md:pl-6 md:pr-6">
+        <td className="border-2 border-gray-200 pl-1 pr-1 md:pl-6 md:pr-6">
           <div className="flex items-center h-full">
             {isEditingName ? (
               <input
@@ -117,19 +117,19 @@ export default function TaskRow({
                   if (e.key === 'Enter') handleNameEdit();
                   if (e.key === 'Escape') setIsEditingName(false);
                 }}
-                className="border rounded px-2 py-1 w-full text-gray-900"
+                className="border rounded px-1 sm:px-2 py-1 w-full text-gray-900"
                 autoFocus
               />
             ) : (
               <div className="flex items-center justify-between w-full">
                 <div 
-                  className={`text-xs md:text-sm pl-1 md:pl-3 pr-2 md:pr-6 text-gray-900 font-medium truncate ${isReadOnly && !isSharedView ? '' : 'cursor-pointer hover:text-blue-600'}`}
+                  className={`text-xs md:text-sm pl-1 md:pl-3 pr-0 md:pr-6 text-gray-900 font-medium truncate ${isReadOnly && !isSharedView ? '' : 'cursor-pointer hover:text-blue-600'}`}
                   onClick={isReadOnly && !isSharedView ? undefined : () => setIsEditingName(true)}
                 >
                   {task.name}
                 </div>
                 
-                <div className="flex items-center space-x-1">
+                <div className="flex items-center space-x-0 sm:space-x-1 ml-1">
                   <button 
                     onClick={() => setShowComments(!showComments)}
                     className={`${hasComments ? 'text-blue-500' : 'text-gray-400'} hover:text-blue-600 relative`}
@@ -177,7 +177,7 @@ export default function TaskRow({
               <select
                 value={task.status || ''}
                 onChange={handleStatusChange}
-                className={`w-11/12 h-4/5 text-xs md:text-sm font-bold cursor-pointer border-0 text-center appearance-none bg-transparent ${
+                className={`w-full h-4/5 text-xs md:text-sm font-bold cursor-pointer border-0 text-center appearance-none bg-transparent ${
                   task.status ? '' : 'text-gray-400'
                 }`}
               >
@@ -199,7 +199,7 @@ export default function TaskRow({
               <select
                 value={task.priority || ''}
                 onChange={handlePriorityChange}
-                className={`w-11/12 h-4/5 text-xs md:text-sm font-bold cursor-pointer border-0 text-center appearance-none bg-transparent ${
+                className={`w-full h-4/5 text-xs md:text-sm font-bold cursor-pointer border-0 text-center appearance-none bg-transparent ${
                   task.priority ? '' : 'text-gray-400'
                 }`}
               >

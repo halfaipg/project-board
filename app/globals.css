@@ -42,3 +42,9 @@ select {
   height: 100% !important;
   border: none !important;
 }
+
+/* Custom utility classes */
+.text-2xs {
+  font-size: 0.65rem !important;
+  line-height: 1rem !important;
+}

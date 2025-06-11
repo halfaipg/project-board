@@ -41,7 +41,7 @@ export default function DeveloperDisplay({
         onClick={!isReadOnly ? onClick : undefined}
         style={{height: '56px'}}
       >
-        <span className="text-sm font-bold">Unassigned</span>
+        <span className="text-xs sm:text-sm font-bold">Unassigned</span>
       </div>
     );
   }
@@ -77,7 +77,7 @@ export default function DeveloperDisplay({
 
             {/* Mobile view (≤ 640px) - Always show initials */}
             <span 
-              className="block sm:hidden text-xs md:text-sm font-bold"
+              className="block sm:hidden text-2xs md:text-xs font-bold"
               style={{ color: getTextColor(member?.color || '#2C3E50') }}
             >
               {getInitials(dev)}

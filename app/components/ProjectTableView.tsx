@@ -362,8 +362,8 @@ export default function ProjectTableView({
   };
 
   return (
-    <div className="p-4 max-w-full mx-auto overflow-x-auto" suppressHydrationWarning>
-      <div className="flex justify-between items-center mb-6">
+    <div className="p-0 sm:p-4 max-w-full mx-auto overflow-x-auto" suppressHydrationWarning>
+      <div className="flex justify-between items-center mb-4 sm:mb-6 px-2 sm:px-0">
         <div>
           <h2 className="text-xl font-semibold text-gray-900">Project Tasks</h2>
           {isSharedView ? (
@@ -381,25 +381,25 @@ export default function ProjectTableView({
       ) : (
         <>
           {sections.map(section => (
-            <div key={section.id} className="mb-10">
-              <div className="flex items-center mb-3 px-2">
+            <div key={section.id} className="mb-8 sm:mb-10">
+              <div className="flex items-center mb-2 sm:mb-3 px-2">
                 <h2 className="text-lg font-medium text-blue-600">{section.title}</h2>
               </div>
               <div className="overflow-x-auto rounded-md border border-gray-200 bg-white">
                 <table className="min-w-full border-collapse table-fixed border-spacing-0">
                   <thead>
-                    <tr className="h-14" style={{height: '56px'}}>
+                    <tr className="h-12 sm:h-14" style={{height: '56px'}}>
                       <th scope="col" className="border-2 border-gray-200 bg-gray-50" style={{width: '40%', padding: '0'}}>
-                        <div className="h-14 flex items-center pl-6 text-xs font-bold text-gray-600 uppercase tracking-wider" style={{height: '56px'}}>Task Name</div>
+                        <div className="h-full flex items-center pl-2 sm:pl-6 text-xs font-bold text-gray-600 uppercase tracking-wider">Task Name</div>
                       </th>
                       <th scope="col" className="border-2 border-gray-200 bg-gray-50" style={{width: '20%', padding: '0'}}>
-                        <div className="h-14 flex items-center justify-center text-xs font-bold text-gray-600 uppercase tracking-wider" style={{height: '56px'}}>Person</div>
+                        <div className="h-full flex items-center justify-center text-xs font-bold text-gray-600 uppercase tracking-wider">Person</div>
                       </th>
                       <th scope="col" className="border-2 border-gray-200 bg-gray-50" style={{width: '20%', padding: '0'}}>
-                        <div className="h-14 flex items-center justify-center text-xs font-bold text-gray-600 uppercase tracking-wider" style={{height: '56px'}}>Status</div>
+                        <div className="h-full flex items-center justify-center text-xs font-bold text-gray-600 uppercase tracking-wider">Status</div>
                       </th>
                       <th scope="col" className="border-2 border-gray-200 bg-gray-50 hidden md:table-cell" style={{width: '20%', padding: '0'}}>
-                        <div className="h-14 flex items-center justify-center text-xs font-bold text-gray-600 uppercase tracking-wider" style={{height: '56px'}}>Priority</div>
+                        <div className="h-full flex items-center justify-center text-xs font-bold text-gray-600 uppercase tracking-wider">Priority</div>
                       </th>
                     </tr>
                   </thead>
@@ -418,7 +418,7 @@ export default function ProjectTableView({
                     {!isReadOnly && (
                       <tr className="h-12" style={{height: '48px'}}>
                         <td colSpan={4} className="border-2 border-gray-200 p-0">
-                          <div className="h-12 flex items-center pl-6" style={{height: '48px'}}>
+                          <div className="h-12 flex items-center pl-2 sm:pl-6" style={{height: '48px'}}>
                             <button 
                               className="text-gray-500 hover:text-gray-700 text-sm"
                               onClick={() => handleAddTask(section.id)}
@@ -437,7 +437,7 @@ export default function ProjectTableView({
           
           {/* Demo Mode Banner - moved to bottom with reset button */}
           {isDemoMode && (
-            <div className="mt-8 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg shadow-sm">
+            <div className="mt-8 p-2 sm:p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg shadow-sm mx-1 sm:mx-0">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
@@ -475,9 +475,9 @@ export default function ProjectTableView({
                         }
                       }
                     }}
-                    className="ml-4 px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700"
+                    className="ml-2 sm:ml-4 px-2 sm:px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700"
                   >
-                    Reset Data
+                    Reset
                   </button>
                 )}
               </div>
