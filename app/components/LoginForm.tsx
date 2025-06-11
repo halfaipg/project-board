@@ -113,6 +113,9 @@ export default function LoginForm({ onLogin }: LoginFormProps) {
                 className="w-full px-3 sm:px-4 py-3 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors duration-200 bg-white text-gray-900 placeholder-gray-500"
                 placeholder="Enter your username"
                 required
+                autoCapitalize="none"
+                autoCorrect="off"
+                spellCheck="false"
                 suppressHydrationWarning
               />
             </div>
