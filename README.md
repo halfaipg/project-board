@@ -22,6 +22,20 @@ The one-click deploy button above will:
 
 The demo runs in local mode with sample data. You can add tasks, assign team members, and test all features without any setup required.
 
+## 📊 Customer View
+
+Share your project board with clients and stakeholders in read-only mode:
+
+**[View Customer Demo](https://project-board.generalconcepts.ai/?v=Q3VzdG9tZXI=)** 🔍
+
+The customer view provides a clean, read-only interface where clients can:
+- View task progress without the ability to modify data
+- See team assignments and project status
+- Participate by adding comments to tasks
+- Access project information securely without login credentials
+
+![Project Board Screenshot](project-board-ss.png)
+
 ## 🚀 Features
 
 - **Real-time Collaboration**: Share project boards with team members
@@ -32,6 +46,7 @@ The demo runs in local mode with sample data. You can add tasks, assign team mem
 - **Demo Mode**: Works out-of-the-box with sample data
 - **Persistent Storage**: Vercel KV integration for data persistence
 - **Responsive Design**: Works on desktop and mobile devices
+- **Client View**: Share read-only boards with clients and stakeholders
 
 ## Quick Start
 
