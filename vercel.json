@@ -3,13 +3,5 @@
   "framework": "nextjs",
   "installCommand": "npm install --legacy-peer-deps",
   "buildCommand": "npm run build",
-  "regions": ["iad1"],
-  "functions": {
-    "api/**/*": {
-      "memory": 1024
-    }
-  },
-  "kv": {
-    "preferredRegion": "iad1"
-  }
+  "regions": ["iad1"]
 } 
