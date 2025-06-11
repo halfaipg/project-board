@@ -14,7 +14,11 @@ The one-click deploy button above will:
 
 ## 🚀 Live Demo
 
-**[Try the Live Demo](https://project-board-demo-hpol90n2u-ai-power-grids-projects.vercel.app)** ✨
+**[Try the Live Demo](https://project-board.generalconcepts.ai)** ✨
+
+**Login Credentials:**
+- Username: `demo`
+- Password: `demo`
 
 The demo runs in local mode with sample data. You can add tasks, assign team members, and test all features without any setup required.
 
