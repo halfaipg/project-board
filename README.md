@@ -2,9 +2,19 @@
 
 A modern, real-time collaborative project board application built with Next.js 15, featuring drag-and-drop task management and persistent data storage.
 
+## One-Click Deployment
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhalfaipg%2Fproject-board&project-name=project-board&repository-name=project-board&demo-title=Project%20Board&demo-description=A%20modern%20task%20management%20board%20for%20teams&demo-url=https%3A%2F%2Fproject-board-demo.vercel.app&integration-ids=oac_V3R1GIpkoJorr6fqynnuN&external-id=project-board)
+
+The one-click deploy button above will:
+1. Clone this repository to your GitHub account
+2. Create a new Vercel project
+3. **Automatically set up Vercel KV (powered by Upstash)** for data persistence
+4. Deploy a fully-functioning version of the project board
+
 ## 🚀 Live Demo
 
-**[Try the Live Demo](https://oe-project-board-2hg9s1693-ai-power-grids-projects.vercel.app)** ✨
+**[Try the Live Demo](https://project-board-demo-hpol90n2u-ai-power-grids-projects.vercel.app)** ✨
 
 The demo runs in local mode with sample data. You can add tasks, assign team members, and test all features without any setup required.
 
@@ -16,7 +26,7 @@ The demo runs in local mode with sample data. You can add tasks, assign team mem
 - **Status Tracking**: Move tasks through different project phases
 - **Comments**: Add comments to tasks for better communication
 - **Demo Mode**: Works out-of-the-box with sample data
-- **Persistent Storage**: Optional Vercel KV integration for data persistence
+- **Persistent Storage**: Vercel KV integration for data persistence
 - **Responsive Design**: Works on desktop and mobile devices
 
 ##  Quick Start
@@ -93,8 +103,12 @@ project-board/
 
 ## 🚀 Deployment
 
-### Deploy to Vercel (Recommended)
+### Deploy to Vercel
 
+#### Option 1: One-Click Deploy (Recommended)
+Use the [Deploy with Vercel button](#one-click-deployment) at the top of this README.
+
+#### Option 2: Manual Deploy
 1. **Install Vercel CLI** (if not already installed):
    ```bash
    npm i -g vercel
@@ -106,15 +120,13 @@ project-board/
    vercel --prod
    ```
 
-3. **Set up Vercel KV Storage** (Optional for persistence):
+3. **Set up Vercel KV Storage** (for persistence):
    ```bash
    # Add KV storage to your project
    vercel kv create
    
    # The environment variables will be automatically added to your project
    ```
-
-The app works perfectly without KV storage using local demo mode, but KV adds persistence across sessions.
 
 ### Other Deployment Options
 
@@ -127,8 +139,8 @@ The app can be deployed to any platform that supports Next.js:
 ## 🎮 Usage
 
 1. **Create Tasks**: Click "Add Task" to create new items
-2. **Drag & Drop**: Move tasks between columns (To Do, In Progress, Done)
-3. **Edit Tasks**: Click on tasks to edit details, priority, and due dates
+2. **Edit Tasks**: Click on tasks to edit details, priority, and due dates
+3. **Assign Team Members**: Click the person cell to assign team members
 4. **Collaborate**: Share the URL with team members for real-time collaboration
 
 ## 🛡️ Technical Details
@@ -137,9 +149,8 @@ The app can be deployed to any platform that supports Next.js:
 - **React**: React 19 with latest features
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **Drag & Drop**: @dnd-kit/core
 - **Icons**: Heroicons
-- **Storage**: Vercel KV (with localStorage fallback)
+- **Storage**: Vercel KV powered by Upstash (with localStorage fallback)
 - **Performance**: Turbopack for fast development
 - **Deployment**: Vercel (or any Next.js compatible platform)
 
