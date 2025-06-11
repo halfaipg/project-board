@@ -105,7 +105,7 @@ export default function TaskRow({
   return (
     <>
       <tr className="h-14" style={{height: '56px'}}>
-        <td className="border-2 border-gray-200 pl-1 pr-1 md:pl-6 md:pr-6">
+        <td className="border-2 border-gray-200 pl-1 pr-1 md:pl-6 md:pr-6 max-w-[150px] sm:max-w-none">
           <div className="flex items-center h-full">
             {isEditingName ? (
               <input
@@ -123,16 +123,17 @@ export default function TaskRow({
             ) : (
               <div className="flex items-center justify-between w-full">
                 <div 
-                  className={`text-xs md:text-sm pl-1 md:pl-3 pr-0 md:pr-6 text-gray-900 font-medium truncate ${isReadOnly && !isSharedView ? '' : 'cursor-pointer hover:text-blue-600'}`}
+                  className={`text-xs md:text-sm pl-1 md:pl-3 pr-0 md:pr-6 text-gray-900 font-medium truncate w-[80px] sm:w-auto ${isReadOnly && !isSharedView ? '' : 'cursor-pointer hover:text-blue-600'}`}
                   onClick={isReadOnly && !isSharedView ? undefined : () => setIsEditingName(true)}
+                  style={{ wordWrap: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
                 >
                   {task.name}
                 </div>
                 
-                <div className="flex items-center space-x-0 sm:space-x-1 ml-1">
+                <div className="flex items-center space-x-0 sm:space-x-1 ml-1 flex-shrink-0">
                   <button 
                     onClick={() => setShowComments(!showComments)}
-                    className={`${hasComments ? 'text-blue-500' : 'text-gray-400'} hover:text-blue-600 relative`}
+                    className={`${hasComments ? 'text-blue-500' : 'text-gray-400'} hover:text-blue-600 relative flex-shrink-0`}
                   >
                     {hasComments && (
                       <span className="absolute -top-2 -left-3 bg-blue-500 text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
@@ -147,7 +148,7 @@ export default function TaskRow({
                   {!isReadOnly && (
                     <button 
                       onClick={handleDeleteTask}
-                      className="text-red-400 hover:text-red-600"
+                      className="text-red-400 hover:text-red-600 flex-shrink-0"
                       title="Delete task"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -389,16 +389,16 @@ export default function ProjectTableView({
                 <table className="min-w-full border-collapse table-fixed border-spacing-0">
                   <thead>
                     <tr className="h-12 sm:h-14" style={{height: '56px'}}>
-                      <th scope="col" className="border-2 border-gray-200 bg-gray-50" style={{width: '40%', padding: '0'}}>
+                      <th scope="col" className="border-2 border-gray-200 bg-gray-50" style={{width: '50%', maxWidth: '200px', padding: '0'}}>
                         <div className="h-full flex items-center pl-2 sm:pl-6 text-xs font-bold text-gray-600 uppercase tracking-wider">Task Name</div>
                       </th>
-                      <th scope="col" className="border-2 border-gray-200 bg-gray-50" style={{width: '20%', padding: '0'}}>
+                      <th scope="col" className="border-2 border-gray-200 bg-gray-50" style={{width: '25%', minWidth: '80px', padding: '0'}}>
                         <div className="h-full flex items-center justify-center text-xs font-bold text-gray-600 uppercase tracking-wider">Person</div>
                       </th>
-                      <th scope="col" className="border-2 border-gray-200 bg-gray-50" style={{width: '20%', padding: '0'}}>
+                      <th scope="col" className="border-2 border-gray-200 bg-gray-50" style={{width: '25%', minWidth: '80px', padding: '0'}}>
                         <div className="h-full flex items-center justify-center text-xs font-bold text-gray-600 uppercase tracking-wider">Status</div>
                       </th>
-                      <th scope="col" className="border-2 border-gray-200 bg-gray-50 hidden md:table-cell" style={{width: '20%', padding: '0'}}>
+                      <th scope="col" className="border-2 border-gray-200 bg-gray-50 hidden md:table-cell" style={{width: '20%', minWidth: '100px', padding: '0'}}>
                         <div className="h-full flex items-center justify-center text-xs font-bold text-gray-600 uppercase tracking-wider">Priority</div>
                       </th>
                     </tr>
