@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "A real-time collaborative project board with drag-and-drop task management, team assignments, and client sharing capabilities.",
     images: [
       {
-        url: "/project-board-ss.png",
+        url: "/project-board-ss-small.png",
         width: 1200,
         height: 630,
         alt: "Project Board Screenshot"
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Project Board - Modern Task Management",
     description: "A real-time collaborative project board with drag-and-drop task management, team assignments, and client sharing capabilities.",
-    images: ["/project-board-ss.png"]
+    images: ["/project-board-ss-small.png"]
   }
 };
 
