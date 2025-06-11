@@ -1,0 +1,50 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Main gradient -->
+    <linearGradient id="primaryGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#667EEA;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#764BA2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F093FB;stop-opacity:1" />
+    </linearGradient>
+    <!-- Secondary gradient -->
+    <linearGradient id="accentGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#4FACFE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00F2FE;stop-opacity:1" />
+    </linearGradient>
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="0.8" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Perfect hexagon with equal width and height - same distance from center in all directions -->
+  <path d="M16 4 L25 10 L25 22 L16 28 L7 22 L7 10 Z" fill="url(#primaryGradient)" filter="url(#glow)"/>
+  
+  <!-- Inner geometric pattern - perfectly square -->
+  <g opacity="0.9">
+    <!-- Central diamond - perfect square -->
+    <path d="M16 10 L22 16 L16 22 L10 16 Z" fill="url(#accentGradient)"/>
+    
+    <!-- Corner triangles - perfectly symmetrical -->
+    <path d="M16 10 L19 13 L16 16 L13 13 Z" fill="#FFFFFF" opacity="0.8"/>
+    <path d="M16 16 L19 19 L16 22 L13 19 Z" fill="#FFFFFF" opacity="0.6"/>
+  </g>
+  
+  <!-- Perfectly symmetrical highlight lines -->
+  <g stroke="#FFFFFF" stroke-width="0.5" opacity="0.4" fill="none">
+    <path d="M9 11 L23 11"/>
+    <path d="M9 21 L23 21"/>
+    <path d="M11 9 L21 23"/>
+    <path d="M21 9 L11 23"/>
+  </g>
+  
+  <!-- Central dot highlight -->
+  <circle cx="16" cy="16" r="1" fill="#FFFFFF" opacity="0.8"/>
+  
+  <!-- Outer glow ring - matches hexagon -->
+  <path d="M16 4 L25 10 L25 22 L16 28 L7 22 L7 10 Z" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.6"/>
+</svg> 

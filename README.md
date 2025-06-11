@@ -1,0 +1,156 @@
+# Project Board
+
+A modern, real-time collaborative project board application built with Next.js 15, featuring drag-and-drop task management and persistent data storage.
+
+## 🚀 Live Demo
+
+**[Try the Live Demo](https://oe-project-board-2hg9s1693-ai-power-grids-projects.vercel.app)** ✨
+
+The demo runs in local mode with sample data. You can add tasks, assign team members, and test all features without any setup required.
+
+## 🚀 Features
+
+- **Real-time Collaboration**: Share project boards with team members
+- **Task Management**: Create, edit, and organize tasks
+- **Team Assignment**: Assign tasks to team members with color-coded displays  
+- **Status Tracking**: Move tasks through different project phases
+- **Comments**: Add comments to tasks for better communication
+- **Demo Mode**: Works out-of-the-box with sample data
+- **Persistent Storage**: Optional Vercel KV integration for data persistence
+- **Responsive Design**: Works on desktop and mobile devices
+
+##  Quick Start
+
+### Prerequisites
+
+- Node.js 18.18.0 or higher
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. **Clone and install dependencies**:
+   ```bash
+   git clone <repository-url>
+   cd project-board
+   npm install
+   ```
+
+2. **Set up environment variables** (optional):
+   ```bash
+   cp .env.local.template .env.local
+   # Edit .env.local with your preferred settings
+   ```
+
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**:
+   Visit [http://localhost:3000](http://localhost:3000) to see the application.
+
+## 🛠️ Configuration
+
+### Environment Variables
+
+Copy `.env.local.template` to `.env.local` and customize:
+
+```bash
+# Optional: Vercel KV Storage for persistence
+KV_REST_API_URL=""
+KV_REST_API_TOKEN=""
+
+# Customize your project sections
+NEXT_PUBLIC_PROJECT_SECTIONS="Proof of Concept,Development,Hyper Care"
+
+# Customize team members
+NEXT_PUBLIC_TEAM_MEMBERS_CSV="Alex,Sarah,Michael,Emma"
+```
+
+## 🛠️ Development
+
+### Available Scripts
+
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
+
+### Project Structure
+
+```
+project-board/
+├── app/                 # Next.js 15 App Router
+│   ├── components/      # React components
+│   ├── types/          # TypeScript type definitions
+│   ├── lib/            # Utility functions
+│   └── api/            # API routes
+├── public/             # Static assets
+└── tailwind.config.js  # Tailwind CSS configuration
+```
+
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. **Install Vercel CLI** (if not already installed):
+   ```bash
+   npm i -g vercel
+   ```
+
+2. **Deploy from project directory**:
+   ```bash
+   cd project-board
+   vercel --prod
+   ```
+
+3. **Set up Vercel KV Storage** (Optional for persistence):
+   ```bash
+   # Add KV storage to your project
+   vercel kv create
+   
+   # The environment variables will be automatically added to your project
+   ```
+
+The app works perfectly without KV storage using local demo mode, but KV adds persistence across sessions.
+
+### Other Deployment Options
+
+The app can be deployed to any platform that supports Next.js:
+- Netlify
+- Railway
+- Digital Ocean App Platform
+- AWS Amplify
+
+## 🎮 Usage
+
+1. **Create Tasks**: Click "Add Task" to create new items
+2. **Drag & Drop**: Move tasks between columns (To Do, In Progress, Done)
+3. **Edit Tasks**: Click on tasks to edit details, priority, and due dates
+4. **Collaborate**: Share the URL with team members for real-time collaboration
+
+## 🛡️ Technical Details
+
+- **Framework**: Next.js 15 with App Router
+- **React**: React 19 with latest features
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Drag & Drop**: @dnd-kit/core
+- **Icons**: Heroicons
+- **Storage**: Vercel KV (with localStorage fallback)
+- **Performance**: Turbopack for fast development
+- **Deployment**: Vercel (or any Next.js compatible platform)
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📧 Support
+
+If you have any questions or need help, please open an issue in the repository.
