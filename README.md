@@ -12,7 +12,7 @@ The one-click deploy button above will:
 3. **Automatically set up Vercel KV (powered by Upstash)** for data persistence
 4. Deploy a fully-functioning version of the project board
 
-## 🚀 Live Demo
+## Live Demo
 
 **[Try the Live Demo](https://project-board.generalconcepts.ai)** ✨
 
@@ -22,7 +22,7 @@ The one-click deploy button above will:
 
 The demo runs in local mode with sample data. You can add tasks, assign team members, and test all features without any setup required.
 
-## 🚀 Features
+## Features
 
 - **Real-time Collaboration**: Share project boards with team members
 - **Task Management**: Create, edit, and organize tasks
@@ -33,7 +33,7 @@ The demo runs in local mode with sample data. You can add tasks, assign team mem
 - **Persistent Storage**: Vercel KV integration for data persistence
 - **Responsive Design**: Works on desktop and mobile devices
 
-##  Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -63,7 +63,7 @@ The demo runs in local mode with sample data. You can add tasks, assign team mem
 4. **Open your browser**:
    Visit [http://localhost:3000](http://localhost:3000) to see the application.
 
-## 🛠️ Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -81,7 +81,7 @@ NEXT_PUBLIC_PROJECT_SECTIONS="Proof of Concept,Development,Hyper Care"
 NEXT_PUBLIC_TEAM_MEMBERS_CSV="Alex,Sarah,Michael,Emma"
 ```
 
-## 🛠️ Development
+## Development
 
 ### Available Scripts
 
@@ -105,7 +105,7 @@ project-board/
 └── tailwind.config.js  # Tailwind CSS configuration
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Deploy to Vercel
 
@@ -140,14 +140,14 @@ The app can be deployed to any platform that supports Next.js:
 - Digital Ocean App Platform
 - AWS Amplify
 
-## 🎮 Usage
+## Usage
 
 1. **Create Tasks**: Click "Add Task" to create new items
 2. **Edit Tasks**: Click on tasks to edit details, priority, and due dates
 3. **Assign Team Members**: Click the person cell to assign team members
 4. **Collaborate**: Share the URL with team members for real-time collaboration
 
-## 🛡️ Technical Details
+## Technical Details
 
 - **Framework**: Next.js 15 with App Router
 - **React**: React 19 with latest features
@@ -158,14 +158,14 @@ The app can be deployed to any platform that supports Next.js:
 - **Performance**: Turbopack for fast development
 - **Deployment**: Vercel (or any Next.js compatible platform)
 
-## 📄 License
+## License
 
 This project is open source and available under the MIT License.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📧 Support
+## Support
 
 If you have any questions or need help, please open an issue in the repository.
