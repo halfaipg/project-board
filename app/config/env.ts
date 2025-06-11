@@ -7,10 +7,10 @@ export interface ProjectConfig {
 }
 
 const defaultConfig: ProjectConfig = {
-  title: 'AI Power Grid',
+  title: 'Project Board',
   logo: '/logo.svg',
-  username: 'admin',
-  password: 'admin',
+  username: 'demo',
+  password: 'demo',
   sections: ['Planning', 'In Progress', 'Review', 'Complete']
 };
 
