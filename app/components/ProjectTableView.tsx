@@ -362,7 +362,7 @@ export default function ProjectTableView({
   };
 
   return (
-    <div className="p-4 max-w-full mx-auto" suppressHydrationWarning>
+    <div className="p-4 max-w-full mx-auto overflow-x-auto" suppressHydrationWarning>
       <div className="flex justify-between items-center mb-6">
         <div>
           <h2 className="text-xl font-semibold text-gray-900">Project Tasks</h2>
@@ -385,7 +385,7 @@ export default function ProjectTableView({
               <div className="flex items-center mb-3 px-2">
                 <h2 className="text-lg font-medium text-blue-600">{section.title}</h2>
               </div>
-              <div className="overflow-hidden rounded-md border border-gray-200 bg-white">
+              <div className="overflow-x-auto rounded-md border border-gray-200 bg-white">
                 <table className="min-w-full border-collapse table-fixed border-spacing-0">
                   <thead>
                     <tr className="h-14" style={{height: '56px'}}>
@@ -398,7 +398,7 @@ export default function ProjectTableView({
                       <th scope="col" className="border-2 border-gray-200 bg-gray-50" style={{width: '20%', padding: '0'}}>
                         <div className="h-14 flex items-center justify-center text-xs font-bold text-gray-600 uppercase tracking-wider" style={{height: '56px'}}>Status</div>
                       </th>
-                      <th scope="col" className="border-2 border-gray-200 bg-gray-50" style={{width: '20%', padding: '0'}}>
+                      <th scope="col" className="border-2 border-gray-200 bg-gray-50 hidden md:table-cell" style={{width: '20%', padding: '0'}}>
                         <div className="h-14 flex items-center justify-center text-xs font-bold text-gray-600 uppercase tracking-wider" style={{height: '56px'}}>Priority</div>
                       </th>
                     </tr>

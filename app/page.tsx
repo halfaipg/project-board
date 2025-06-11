@@ -92,26 +92,26 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="flex items-center justify-between container mx-auto px-2 sm:px-4 lg:px-6 py-3">
+        <div className="flex items-center justify-between w-full px-2 sm:px-4 lg:px-6 py-3">
           <div className="flex items-center">
             {config.logo && (
               <img 
                 src={config.logo} 
                 alt="Logo"
-                className="h-8 w-8 mr-4"
+                className="h-8 w-8 mr-2 md:mr-4"
                 onError={(e) => {
                   // Hide logo if it fails to load
                   (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
             )}
-            <h1 className="text-xl font-semibold text-gray-900">Project Management Board</h1>
-            <span className="ml-4 text-xs text-gray-500 px-2 py-1 bg-gray-100 rounded-full">Main Board</span>
+            <h1 className="text-lg md:text-xl font-semibold text-gray-900">Project Board</h1>
+            <span className="ml-2 md:ml-4 text-xs text-gray-500 px-2 py-1 bg-gray-100 rounded-full">Main</span>
           </div>
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 md:space-x-3">
             <div className="flex items-center">
               <div className="flex items-center">
-                <span className="text-sm text-gray-700 mr-3">
+                <span className="text-xs md:text-sm text-gray-700 mr-2 md:mr-3 hidden sm:inline">
                   {viewerName || username}
                 </span>
                 <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-500">
@@ -125,15 +125,15 @@ export default function Home() {
                 <>
                   <button 
                     onClick={createShareableLink}
-                    className="text-sm text-blue-600 hover:text-blue-800 ml-4 mr-3"
+                    className="text-xs md:text-sm text-blue-600 hover:text-blue-800 ml-2 md:ml-4 mr-2 md:mr-3"
                   >
-                    Share Board
+                    Share
                   </button>
                   <button 
                     onClick={handleLogout}
-                    className="text-sm text-gray-500 hover:text-gray-700"
+                    className="text-xs md:text-sm text-gray-500 hover:text-gray-700"
                   >
-                    Sign Out
+                    Exit
                   </button>
                 </>
               )}
@@ -142,11 +142,11 @@ export default function Home() {
         </div>
       </header>
       
-      <div className="container mx-auto">
+      <div className="w-full px-0 sm:px-4">
         <ProjectTableView 
           isReadOnly={isReadOnly} 
           currentUser={viewerName || username} 
-          />
+        />
       </div>
     </main>
   );

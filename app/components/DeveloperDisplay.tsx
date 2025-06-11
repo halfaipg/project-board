@@ -52,39 +52,70 @@ export default function DeveloperDisplay({
       onClick={!isReadOnly ? onClick : undefined}
       style={{height: '56px'}}
     >
-      {developers.map((dev, index) => {
-        const member = memberMap.get(dev);
-        const width = `${100 / developers.length}%`;
-        
-        return (
-          <div
-            key={dev}
-            className={`h-full flex items-center justify-center ${
-              index < developers.length - 1 ? 'border-r border-gray-200' : ''
-            }`}
-            style={{ 
-              width,
-              backgroundColor: `${member?.color}15`
-            }}
-          >
-            {/* Desktop view (> 640px) - Show full names for 1-2 devs, initials for 3-4 */}
-            <span 
-              className="hidden sm:block text-sm font-bold"
-              style={{ color: getTextColor(member?.color || '#2C3E50') }}
+      {developers.length <= 3 ? (
+        // Show each developer in equal width sections when we have 1-3 developers
+        developers.map((dev, index) => {
+          const member = memberMap.get(dev);
+          const width = `${100 / developers.length}%`;
+          const initials = getInitials(dev);
+          
+          return (
+            <div
+              key={dev}
+              className={`h-full flex items-center justify-center ${
+                index < developers.length - 1 ? 'border-r border-gray-200' : ''
+              }`}
+              style={{ 
+                width,
+                backgroundColor: `${member?.color}15`
+              }}
             >
-              {developers.length <= 2 ? dev : getInitials(dev)}
-            </span>
-
-            {/* Mobile view (≤ 640px) - Always show initials */}
-            <span 
-              className="block sm:hidden text-sm font-bold"
-              style={{ color: getTextColor(member?.color || '#2C3E50') }}
-            >
-              {getInitials(dev)}
-            </span>
+              <div 
+                className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold"
+                style={{ 
+                  backgroundColor: member?.color || '#CBD5E0',
+                  color: 'white'
+                }}
+              >
+                {initials}
+              </div>
+            </div>
+          );
+        })
+      ) : (
+        // Show avatars in a compact overlapping layout when we have more than 3 developers
+        <div className="h-full w-full flex items-center justify-center">
+          <div className="flex -space-x-2">
+            {developers.slice(0, 3).map((dev, index) => {
+              const member = memberMap.get(dev);
+              const initials = getInitials(dev);
+              
+              return (
+                <div 
+                  key={dev}
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold ring-2 ring-white"
+                  style={{ 
+                    backgroundColor: member?.color || '#CBD5E0',
+                    color: 'white',
+                    zIndex: developers.length - index
+                  }}
+                >
+                  {initials}
+                </div>
+              );
+            })}
+            
+            {developers.length > 3 && (
+              <div 
+                className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold bg-gray-400 text-white ring-2 ring-white"
+                style={{ zIndex: 0 }}
+              >
+                +{developers.length - 3}
+              </div>
+            )}
           </div>
-        );
-      })}
+        </div>
+      )}
     </div>
   );
 } 

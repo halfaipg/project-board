@@ -105,7 +105,7 @@ export default function TaskRow({
   return (
     <>
       <tr className="h-14" style={{height: '56px'}}>
-        <td className="border-2 border-gray-200 pl-6 pr-6">
+        <td className="border-2 border-gray-200 pl-2 pr-2 md:pl-6 md:pr-6">
           <div className="flex items-center h-full">
             {isEditingName ? (
               <input
@@ -123,7 +123,7 @@ export default function TaskRow({
             ) : (
               <div className="flex items-center justify-between w-full">
                 <div 
-                  className={`text-sm pl-3 pr-6 text-gray-900 font-medium ${isReadOnly && !isSharedView ? '' : 'cursor-pointer hover:text-blue-600'}`}
+                  className={`text-xs md:text-sm pl-1 md:pl-3 pr-2 md:pr-6 text-gray-900 font-medium truncate ${isReadOnly && !isSharedView ? '' : 'cursor-pointer hover:text-blue-600'}`}
                   onClick={isReadOnly && !isSharedView ? undefined : () => setIsEditingName(true)}
                 >
                   {task.name}
@@ -170,14 +170,14 @@ export default function TaskRow({
         <td className="border-2 border-gray-200 p-0" style={{overflow: 'hidden'}}>
           <div className={`h-14 ${getStatusColor(task.status)} flex items-center justify-center`} style={{height: '56px'}}>
             {isReadOnly ? (
-              <span className="text-sm font-bold">
+              <span className="text-xs md:text-sm font-bold">
                 {task.status || 'Not set'}
               </span>
             ) : (
               <select
                 value={task.status || ''}
                 onChange={handleStatusChange}
-                className={`w-11/12 h-4/5 text-sm font-bold cursor-pointer border-0 text-center appearance-none bg-transparent ${
+                className={`w-11/12 h-4/5 text-xs md:text-sm font-bold cursor-pointer border-0 text-center appearance-none bg-transparent ${
                   task.status ? '' : 'text-gray-400'
                 }`}
               >
@@ -189,17 +189,17 @@ export default function TaskRow({
             )}
           </div>
         </td>
-        <td className="border-2 border-gray-200 p-0" style={{overflow: 'hidden'}}>
+        <td className="border-2 border-gray-200 p-0 hidden md:table-cell" style={{overflow: 'hidden'}}>
           <div className={`h-14 ${getPriorityColor(task.priority)} flex items-center justify-center`} style={{height: '56px'}}>
             {isReadOnly ? (
-              <span className="text-sm font-bold">
+              <span className="text-xs md:text-sm font-bold">
                 {task.priority || 'Not set'}
               </span>
             ) : (
               <select
                 value={task.priority || ''}
                 onChange={handlePriorityChange}
-                className={`w-11/12 h-4/5 text-sm font-bold cursor-pointer border-0 text-center appearance-none bg-transparent ${
+                className={`w-11/12 h-4/5 text-xs md:text-sm font-bold cursor-pointer border-0 text-center appearance-none bg-transparent ${
                   task.priority ? '' : 'text-gray-400'
                 }`}
               >
