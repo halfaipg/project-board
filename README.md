@@ -1,6 +1,6 @@
 # Project Board
 
-A modern, real-time collaborative project board application built with Next.js 15, featuring drag-and-drop task management and persistent data storage.
+A modern, real-time collaborative project board application built with Next.js 15, featuring task management and persistent data storage.
 
 ## One-Click Deployment
 
@@ -47,6 +47,31 @@ The customer view provides a clean, read-only interface where clients can:
 - **Persistent Storage**: Vercel KV integration for data persistence
 - **Responsive Design**: Works on desktop and mobile devices
 - **Client View**: Share read-only boards with clients and stakeholders
+
+## Roadmap
+
+Upcoming features and enhancements planned for Project Board:
+
+### Authentication & Identity
+- **Google & Microsoft OAuth Integration**: Enable single sign-on with major identity providers
+- **User Avatars**: Display profile pictures on the board for better team member identification
+
+### Security & Sharing
+- **Enhanced Secure Sharing**: Generate unique access URLs stored in Upstash database
+  - Disable generic base64 URL access
+  - Add customer email addresses to the database
+  - Implement SMTP alerts when tasks are marked complete with comments
+
+### AI & Integrations
+- **AI RAG Support**: Implement AI assistance that can:
+  - Access project tasks and statuses
+  - Utilize admin-provided background information
+  - Help customers get explanations about project components and context
+
+### External Platform Support
+- **Enterprise Integration**: Connect with common project management platforms
+  - Export/import from ConnectWise, Jira, and other systems
+  - Distill complex project data into simplified Project Board format
 
 ## Quick Start
 

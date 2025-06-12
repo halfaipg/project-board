@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Project Board - Modern Task Management",
-    description: "A real-time collaborative project board with drag-and-drop task management, team assignments, and client sharing capabilities.",
+    description: "A real-time collaborative project board with task management, team assignments, and client sharing capabilities.",
     images: [
       {
         url: "/project-board-ss-small.png",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Project Board - Modern Task Management",
-    description: "A real-time collaborative project board with drag-and-drop task management, team assignments, and client sharing capabilities.",
+    description: "A real-time collaborative project board with task management, team assignments, and client sharing capabilities.",
     images: ["/project-board-ss-small.png"]
   }
 };
